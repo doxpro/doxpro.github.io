@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h1>Doxpro Blog</h1>
+<h1><span id="cname">Doxpro</span> Blog</h1>
 <p>Blog is being created. Please come back later!</p>
+<script>
+    function getParameterByName(name) {
+        var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+        return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+    }
+    document.getElementById("cname").innerHTML = getParameterByName(cname) || 'Doxpro';
+</script>
 </body>
 </html>
